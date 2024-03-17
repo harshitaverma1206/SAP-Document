@@ -1,0 +1,442 @@
+<!--<mvc:View-->
+<!--		controllerName="MyTutionFee.controller.MyTution"-->
+<!--		xmlns:mvc="sap.ui.core.mvc"-->
+<!--		xmlns="sap.m"-->
+<!--		xmlns:f="sap.f"-->
+<!--		xmlns:layout="sap.ui.layout"-->
+<!--		xmlns:core="sap.ui.core"-->
+<!--		height="100%">-->
+	
+	
+<!--			<f:DynamicPage id="dynamicPageId">-->
+	
+<!--			<f:title>-->
+<!--				<f:DynamicPageTitle>-->
+<!--					<f:heading>-->
+<!--						<Title text="My Tution"/>-->
+<!--					</f:heading>-->
+<!--					</f:DynamicPageTitle>	-->
+<!--			</f:title>-->
+<!--		<f:header>-->
+<!--				<f:DynamicPageHeader pinnable="true">-->
+<!--				<f:content>-->
+<!--				<MessageStrip text="Any Payment Done will take 24hrs to reflect" showIcon="true" showCloseButton="true" class="sapUiMediumMarginBottom msg"></MessageStrip>-->
+<!--				<FlexBox wrap="Wrap" fitContainer="true">-->
+<!--				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd" id="mini">-->
+<!--					<Label text="Student Name" design="Bold"/>-->
+<!--					<VBox>-->
+<!--						<Label text="Abedli"/>-->
+<!--					</VBox>-->
+<!--				</layout:VerticalLayout>-->
+<!--				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">-->
+<!--					<Label text="Additional ID" design="Bold"/>-->
+<!--					<VBox>-->
+<!--						<Label text="1000981"/>-->
+<!--					</VBox>-->
+<!--				</layout:VerticalLayout>-->
+<!--				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">-->
+<!--					<Label text="Program Name" design="Bold"/>-->
+<!--				</layout:VerticalLayout>-->
+<!--				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">-->
+<!--					<Label text="Academic-Year" design="Bold"/>-->
+<!--					<VBox>-->
+<!--						<Label text="2023-2024"/>-->
+<!--					</VBox>-->
+<!--				</layout:VerticalLayout>-->
+<!--				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">-->
+<!--					<Label text="Academic Session" design="Bold"/>-->
+<!--					<VBox>-->
+<!--						<Label text="Winter"/>-->
+<!--					</VBox>-->
+<!--				</layout:VerticalLayout>-->
+<!--				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">-->
+<!--					<Label text="Stage" design="Bold"/>-->
+<!--					<VBox>-->
+<!--						<Label text="Year1- Phase1"/>-->
+<!--					</VBox>-->
+<!--				</layout:VerticalLayout>-->
+<!--				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">-->
+<!--					<Label text="Student Category" design="Bold"/>-->
+<!--					<VBox>-->
+<!--						<Label text=""/>-->
+<!--					</VBox>-->
+<!--				</layout:VerticalLayout>-->
+<!--			</FlexBox>-->
+				
+<!--				</f:content>-->
+<!--				</f:DynamicPageHeader>-->
+<!--			</f:header>-->
+<!--			<f:content>-->
+<!--				<IconTabBar id="idIconTabBarNoIcons" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding">-->
+<!--								<items>-->
+<!--									<IconTabFilter text="Balance Due" key="info">-->
+<!--										<Table id="goodsIssueItemsTableId" selectionChange="SelectLineItem" visible="true" mode="SingleSelect" items="{tutionModel>/BalanceDueSet}">-->
+<!--											<headerToolbar>-->
+<!--												<Toolbar>-->
+<!--													<content>-->
+<!--														<Label text="Year" labelFor="label1" class="sapUiTinyMarginTop" design="Bold"></Label>-->
+<!--														<ComboBox id="label1" width="90px" class="year">-->
+<!--															<core:Item key="{key}" text="2019"/>-->
+<!--															<core:Item key="{key}" text="2020"/>-->
+<!--															<core:Item key="{key}" text="2021"/>-->
+<!--															<core:Item key="{key}" text="2022"/>-->
+<!--															<core:Item key="{key}" text="2023"/>-->
+<!--															<core:Item key="{key}" text="2024"/>-->
+<!--														</ComboBox>-->
+<!--														<Title text="{LocalDataModel>/titles/ItemsTotal}" level="H2"/>-->
+<!--														<ToolbarSpacer/>-->
+<!--														<Button class="sapUiLargeMarginBegin " text="Wire/Check Payments" icon="sap-icon://expense-report" type="Emphasized"></Button>-->
+<!--														<Button class="sapUiSmallMarginBegin " text="Proceed" icon="sap-icon://money-bills" type="Emphasized"></Button>-->
+<!--													</content>-->
+<!--												</Toolbar>-->
+<!--											</headerToolbar>-->
+<!--											<columns >-->
+												<!-- <Column width="3rem" hAlign="Begin" visible="true"><Label text="{i18n>ITEM}" design="Bold" wrapping="true"/></Column> -->
+<!--												<Column hAlign="Begin" visible="true">-->
+<!--													<Label text="Due Date" design="Bold"/>-->
+<!--												</Column>-->
+<!--												<Column hAlign="Begin" visible="true">-->
+<!--													<Label text="Type" design="Bold"/>-->
+<!--												</Column>-->
+<!--												<Column hAlign="Begin" visible="true">-->
+<!--													<Label text="Fees Paid (In OMR)" design="Bold"/>-->
+<!--												</Column>-->
+<!--												<Column hAlign="Begin"-->
+<!--													visible="{= (${device>/system/tablet} === true ? true : false) || (${device>/system/desktop} === true ? true : false)}">-->
+<!--													<Label text="Discount(In OMR)" design="Bold"/>-->
+<!--												</Column>-->
+<!--												<Column hAlign="Begin"-->
+<!--													visible="{= (${device>/system/tablet} === true ? true : false) || (${device>/system/desktop} === true ? true : false)}">-->
+<!--													<Label text="Fees Due(In OMR)" design="Bold"/>-->
+<!--												</Column>-->
+<!--											</columns>-->
+<!--											<items>-->
+<!--												<ColumnListItem>-->
+<!--													<cells>-->
+														<!-- <Text text="{LocalDataModel>ReservationItem}"/> -->
+														<!--<Text text="{tutionModel>Identifier}"/>-->
+														<!--<Text text="{tutionModel>}"/>-->
+														<!--<Text text="{tutionModel>}"/>-->
+														<!--<Text text="{tutionModel>}"/>-->
+														<!--<Text text="{tutionModel>}"/>-->
+														<!-- <Text text="{LocalDataModel>StockType}"/> -->
+<!--														<HBox>-->
+<!--															<Button icon="sap-icon://add" type="Accept" press="onAddDeleteItem" visible="{=${LocalDataModel>delete} === true?false:true}"-->
+<!--																class="sapUiTinyMarginEnd">-->
+<!--																<customData>-->
+<!--																	<core:CustomData key="add" value=""/>-->
+<!--																</customData>-->
+<!--															</Button>-->
+<!--															<Button icon="sap-icon://delete" type="Reject" press="onAddDeleteItem" visible="{=${LocalDataModel>delete} === true?true:false}">-->
+<!--																<customData>-->
+<!--																	<core:CustomData key="delete" value=""/>-->
+<!--																</customData>-->
+<!--															</Button>-->
+<!--														</HBox>-->
+<!--													</cells>-->
+<!--												</ColumnListItem>-->
+<!--											</items>-->
+<!--										</Table>-->
+<!--									</IconTabFilter>-->
+<!--									<IconTabFilter text="Payment History" key="attachments">-->
+<!--										<Table id="goodsIssues" selectionChange="SelectLineItem" visible="true" mode="SingleSelect" items="{tutionModel>/StudentHeaderSet}" >-->
+<!--											<columns >-->
+												<!-- <Column width="3rem" hAlign="Begin" visible="true"><Label text="{i18n>ITEM}" design="Bold" wrapping="true"/></Column> -->
+<!--												<Column hAlign="Begin" visible="true">-->
+<!--													<Label text="Transaction Id" design="Bold""/>-->
+<!--												</Column>-->
+<!--												<Column hAlign="Begin" visible="true">-->
+<!--													<Label text="Transaction Type" design="Bold"/>-->
+<!--												</Column>-->
+<!--												<Column hAlign="Begin" visible="true">-->
+<!--													<Label text="Payment Date" design="Bold"/>-->
+<!--												</Column>-->
+<!--												<Column hAlign="Begin"-->
+<!--													visible="{= (${device>/system/tablet} === true ? true : false) || (${device>/system/desktop} === true ? true : false)}">-->
+<!--													<Label text="Amount Name" design="Bold"/>-->
+<!--												</Column>-->
+<!--												<Column hAlign="Begin"-->
+<!--													visible="{= (${device>/system/tablet} === true ? true : false) || (${device>/system/desktop} === true ? true : false)}">-->
+<!--													<Label text="Email" design="Bold" />-->
+<!--												</Column>-->
+<!--												<Column hAlign="Begin"-->
+<!--													visible="{= (${device>/system/tablet} === true ? true : false) || (${device>/system/desktop} === true ? true : false)}">-->
+<!--													<Label text="Remarks" design="Bold"/>-->
+<!--												</Column>-->
+<!--											</columns>-->
+<!--											<items>-->
+<!--												<ColumnListItem>-->
+<!--													<cells>-->
+														<!-- <Text text="{LocalDataModel>ReservationItem}"/> -->
+<!--														<Text text="{tutionModel>StudentName}"/>-->
+<!--														<Text text="{tutionModel>Identifier}"/>-->
+<!--														<Text text="{tutionModel>AdditionalId}"/>-->
+<!--														<Text text="{tutionModel>PaymentPlan}"/>-->
+<!--														<Text text="{tutionModel>AcademicYear}"/>-->
+														<!-- <Text text="{LocalDataModel>StockType}"/> -->
+<!--													</cells>-->
+<!--												</ColumnListItem>-->
+<!--											</items>-->
+<!--										</Table>-->
+<!--									</IconTabFilter>-->
+<!--									<IconTabFilter text="Download Receipts" key="attachments">-->
+<!--										<Table id="goodsI" selectionChange="SelectLineItem" visible="true" mode="SingleSelect">-->
+<!--											<columns >-->
+												<!-- <Column width="3rem" hAlign="Begin" visible="true"><Label text="{i18n>ITEM}" design="Bold" wrapping="true"/></Column> -->
+<!--												<Column hAlign="Begin" visible="true">-->
+<!--													<Label text="Date" design="Bold"/>-->
+<!--												</Column>-->
+<!--												<Column hAlign="Begin" visible="true">-->
+<!--													<Label text="Amount" design="Bold"/>-->
+<!--												</Column>-->
+<!--												<Column hAlign="Begin" visible="true">-->
+<!--													<Label text="Billing Item" design="Bold"/>-->
+<!--												</Column>-->
+<!--												<Column hAlign="Begin"-->
+<!--													visible="{= (${device>/system/tablet} === true ? true : false) || (${device>/system/desktop} === true ? true : false)}">-->
+<!--													<Label text="Download" design="Bold"/>-->
+<!--												</Column>-->
+<!--											</columns>-->
+<!--											<items>-->
+<!--												<ColumnListItem>-->
+<!--													<cells>-->
+														<!-- <Text text="{LocalDataModel>ReservationItem}"/> -->
+<!--														<Text text="02/22/2024"/>-->
+<!--														<Text text="500.00"/>-->
+<!--														<Text text="Deposit Tution Fees"/>-->
+<!--														<Button icon="sap-icon://download" type="Transparent"></Button>-->
+														<!-- <Text text="{LocalDataModel>StockType}"/> -->
+<!--													</cells>-->
+<!--												</ColumnListItem>-->
+<!--											</items>-->
+<!--										</Table>-->
+<!--									</IconTabFilter>-->
+<!--								</items>-->
+<!--							</IconTabBar>-->
+<!--			</f:content>-->
+		
+<!--		</f:DynamicPage>-->
+<!--</mvc:View>-->
+
+
+
+<mvc:View
+			controllerName="MyTutionFee.controller.MyTution"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns="sap.m"
+		xmlns:f="sap.f"
+		xmlns:layout="sap.ui.layout"
+		xmlns:core="sap.ui.core"
+		height="100%">
+		<f:DynamicPage id="dynamicPageId">
+	
+			<f:title>
+				<f:DynamicPageTitle>
+					<f:heading>
+						<Title text="My Tution"/>
+					</f:heading>
+					</f:DynamicPageTitle>	
+			</f:title>
+		<f:header>
+				<f:DynamicPageHeader pinnable="true">
+				<f:content>
+				<MessageStrip text="Any Payment Done will take 24hrs to reflect" showIcon="true" showCloseButton="true" class="sapUiMediumMarginBottom msg"></MessageStrip>
+				<FlexBox wrap="Wrap" fitContainer="true">
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<Label text="Student Name" design="Bold"/>
+					<VBox>
+						<Label text=" " id="studentname"/>
+					</VBox>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<Label text="Additional ID" design="Bold"/>
+					<VBox>
+						<Label text=" " id="additional"/>
+					</VBox>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<Label text="Program Name" design="Bold"/>
+					<VBox>
+						<Label  text=" " id="progname"/>            
+					</VBox>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd" >
+					<Label text="Academic-Year" design="Bold"/>
+					<VBox>
+						<Label  text=" " id="ac"/>            
+					</VBox>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<Label text="Academic Session" design="Bold"/>
+					<VBox>
+						<Label text=" " id="session"/>
+					</VBox>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<Label text="Stage" design="Bold"/>
+					<VBox>
+						<Label text=" " id="stage"/>
+					</VBox>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<Label text="Student Category" design="Bold"/>
+					<VBox>
+						<Label text=" " id="studentcat"/>
+					</VBox>
+				</layout:VerticalLayout>
+			</FlexBox>
+				
+				</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+			<f:content>
+				<IconTabBar id="idIconTabBarNoIcons" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding">
+								<items>
+									<IconTabFilter text="Balance Due" key="info">
+										<Table id="goodsIssueItemsTableId" selectionChange="SelectLineItem" visible="true" mode="SingleSelect" items="{BalanceModel>/}" >
+											<headerToolbar>
+												<Toolbar>
+													<content>
+														<Label text="Year" labelFor="label1" class="sapUiTinyMarginTop" design="Bold"></Label>
+														<ComboBox id="label1" width="90px" class="year" items="{yearModel>/}">
+															<core:Item key="{key}" text="{yearModel>Year}"/>
+															<!--<core:Item key="{key}" text="2020"/>-->
+															<!--<core:Item key="{key}" text="2021"/>-->
+															<!--<core:Item key="{key}" text="2022"/>-->
+															<!--<core:Item key="{key}" text="2023"/>-->
+															<!--<core:Item key="{key}" text="2024"/>-->
+														</ComboBox>
+														<Title text="{LocalDataModel>/titles/ItemsTotal}" level="H2"/>
+														<ToolbarSpacer/>
+														<Button class="sapUiLargeMarginBegin " text="Wire/Check Payments" icon="sap-icon://expense-report" type="Emphasized"></Button>
+														<Button class="sapUiSmallMarginBegin " text="Proceed" icon="sap-icon://money-bills" type="Emphasized"></Button>
+													</content>
+												</Toolbar>
+											</headerToolbar>
+											<columns >
+												<!-- <Column width="3rem" hAlign="Begin" visible="true"><Label text="{i18n>ITEM}" design="Bold" wrapping="true"/></Column> -->
+												<Column hAlign="Begin" visible="true">
+													<Label text="Due Date" design="Bold"/>
+												</Column>
+												<Column hAlign="Begin" visible="true">
+													<Label text="Type" design="Bold" />
+												</Column>
+												<Column hAlign="Begin" visible="true">
+													<Label text="Fees Paid (In OMR)" design="Bold" />
+												</Column>
+												<Column hAlign="Begin"
+													visible="{= (${device>/system/tablet} === true ? true : false) || (${device>/system/desktop} === true ? true : false)}">
+													<Label text="Discount(In OMR)" design="Bold"/>
+												</Column>
+												<Column hAlign="Begin"
+													visible="{= (${device>/system/tablet} === true ? true : false) || (${device>/system/desktop} === true ? true : false)}">
+													<Label text="Fees Due(In OMR)" design="Bold"/>
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														
+														<Text  text="{BalanceModel>Identifier}"/>
+														
+														<Text text="{BalanceModel>DescriptionType}"/>
+														<Text text="{BalanceModel>FeePaid}"/>
+														<Text text="{BalanceModel>FeeDue}"/>
+														<Text text="{BalanceModel>Year}"/>
+														
+														<HBox>
+															<Button icon="sap-icon://add" type="Accept" press="onAddDeleteItem" visible="{=${LocalDataModel>delete} === true?false:true}"
+																class="sapUiTinyMarginEnd">
+																<customData>
+																	<core:CustomData key="add" value=""/>
+																</customData>
+															</Button>
+															<Button icon="sap-icon://delete" type="Reject" press="onAddDeleteItem" visible="{=${LocalDataModel>delete} === true?true:false}">
+																<customData>
+																	<core:CustomData key="delete" value=""/>
+																</customData>
+															</Button>
+														</HBox>
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</IconTabFilter>
+									<IconTabFilter text="Payment History" key="attachments">
+										<Table id="goodsIssues" selectionChange="SelectLineItem" visible="true" mode="SingleSelect" items="{paymentdateModel>/}">
+											<columns >
+												<!-- <Column width="3rem" hAlign="Begin" visible="true"><Label text="{i18n>ITEM}" design="Bold" wrapping="true"/></Column> -->
+												<Column hAlign="Begin" visible="true">
+													<Label text="Transaction Id" design="Bold"/>
+												</Column>
+												<Column hAlign="Begin" visible="true">
+													<Label text="Transaction Type" design="Bold"/>
+												</Column>
+												<Column hAlign="Begin" visible="true">
+													<Label text="Payment Date" design="Bold" />
+												</Column>
+												<Column hAlign="Begin"
+													visible="{= (${device>/system/tablet} === true ? true : false) || (${device>/system/desktop} === true ? true : false)}">
+													<Label text="Amount Name" design="Bold"/>
+												</Column>
+												<Column hAlign="Begin"
+													visible="{= (${device>/system/tablet} === true ? true : false) || (${device>/system/desktop} === true ? true : false)}">
+													<Label text="Email" design="Bold" />
+												</Column>
+												<Column hAlign="Begin"
+													visible="{= (${device>/system/tablet} === true ? true : false) || (${device>/system/desktop} === true ? true : false)}">
+													<Label text="Remarks" design="Bold"/>
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														 <Text text="{paymentdateModel>StudentNo}"/>
+														  <Text text="{paymentdateModel>paymentDate}"/>
+														   <Text text="{paymentdateModel>Amount}"/>
+														    <Text text="{paymentdateModel>Amount}"/>
+														     <Text text="{paymentdateModel>Amount}"/>
+														      <Text text="{paymentdateModel>Amount}"/>
+														   
+													
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</IconTabFilter>
+									<IconTabFilter text="Download Receipts" key="attachments">
+										<Table id="goodsI" selectionChange="SelectLineItem" visible="true" mode="SingleSelect" items="{tutionModel>/}">
+											<columns >
+												<!-- <Column width="3rem" hAlign="Begin" visible="true"><Label text="{i18n>ITEM}" design="Bold" wrapping="true"/></Column> -->
+												<Column hAlign="Begin" visible="true">
+													<Label text="Date" design="Bold" />
+												</Column>
+												<Column hAlign="Begin" visible="true">
+													<Label text="Amount" design="Bold" />
+												</Column>
+												<Column hAlign="Begin" visible="true">
+													<Label text="Billing Item" design="Bold"/>
+												</Column>
+												<Column hAlign="Begin"
+													visible="{= (${device>/system/tablet} === true ? true : false) || (${device>/system/desktop} === true ? true : false)}">
+													<Label text="Download" design="Bold"/>
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+													<!--<Text text="{tutionModel>StudentName}"/>-->
+													<!--	<Text text="{tutionModel>Identifier}"/>-->
+													<!--	<Text text="{tutionModel>AdditionalId}"/>-->
+													
+													<!--		<Text text="{tutionModel>AcademicYear}"/>-->
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</IconTabFilter>
+								</items>
+							</IconTabBar>
+			</f:content>
+		</f:DynamicPage>
+</mvc:View>

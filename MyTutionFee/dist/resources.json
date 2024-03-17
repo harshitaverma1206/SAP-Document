@@ -1,0 +1,39 @@
+{
+    "resources": [
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "view/MyTution.view.xml"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "controller/MyTution.controller.js"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        }
+    ]
+}
